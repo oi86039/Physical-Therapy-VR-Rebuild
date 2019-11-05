@@ -1,0 +1,10 @@
+3.1 ; Hello! Omar here!
+3.3 ; Welcome to the Interaction Update!
+4 ; If you point your fingers, you'll shoot out these 2 lasers.
+4 ; These lasers can be used to adjust the trainer's position.
+6 ; Point your finger(s) at the model and grab him using the Hand Trigger.
+6 ; With him grabbed, you can move him by moving the hand you're grabbing him with.
+6 ; You can also rotate him by using the joystick while he is grabbed.
+7.3 ; That's all for now! Motion capture keeps being delayed due to Co-Ed schedules. It should be done soon.
+4 ; Ok, begin text loop...
+2.7 ;  
