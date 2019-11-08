@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     //Uses laser pointer script, credit to @Moaid_T4
 
     public LineRenderer laserLineRenderer;
+    public Transform laserGrabLocation; //Location for laser to pop to when grabbed
     public Color color;
     public Color GrabColor;
     public float laserWidth = 0.1f;
@@ -60,6 +61,7 @@ public class Player : MonoBehaviour
             laserLength = Mathf.Lerp(laserLength, laserMaxLength, 0.08f);
             ShootLaserFromTargetPosition(transform.position, transform.forward, laserLength);
         }
+        
         //If not pointing or are grabbing something, disable ability to grab
         else if (isGrabbing)
         {
@@ -130,7 +132,7 @@ public class Player : MonoBehaviour
     void ShootLaserToModel(Vector3 targetPosition)
     {
         laserLineRenderer.SetPosition(0, targetPosition);
-        laserLineRenderer.SetPosition(1, model.transform.position + new Vector3(0,1.4f,0));
+        laserLineRenderer.SetPosition(1, laserGrabLocation.position);
     }
 
 
