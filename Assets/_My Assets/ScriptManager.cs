@@ -4,10 +4,14 @@ using System.Text.RegularExpressions;
 using UnityEngine;
 using TMPro;
 
+/**
+ * @brief A line of dialogue followed by how long to show it for
+ */
+
 struct Line
 { //Voice line
-    public float duration;
-    public string line;
+    public float duration; //Parse how long the line should last for
+    public string line; //The line to print to the screen
 
 
     public Line(float duration, string line)
@@ -16,18 +20,23 @@ struct Line
         this.line = line;
     }
 }
+
+/**
+ * @brief Parses, stores, and displays all lines of dialogue from an external file
+ */
+
 public class ScriptManager : MonoBehaviour
 {
 
     public string filename; //Filename to get lines from (txt)
-    List<Line> lineList;
-    int currentLine;
+    List<Line> lineList; //List of lines to store lines to
+    int currentLine; //Index
 
-    [Header("")]
+    [Header("")] //Unity elements
     public Animator anim;
     public TextMeshProUGUI text;
 
-    bool runTimer;
+    bool runTimer; //Are we allowed to count down the time?
     public float time; //current number of seconds counted
     public float timer; //duration when to skip to next line.
 
