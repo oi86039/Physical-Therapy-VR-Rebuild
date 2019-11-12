@@ -21,6 +21,8 @@ public class ScriptManagerV2 : MonoBehaviour
     public Animator fadeAnim; //Animator for fade out attached to player's field of view
     public TextMeshProUGUI text;
 
+    public AudioSource narration; //Narration audio to stop or play
+
     // Initialize all values
     void Awake()
     {
@@ -83,7 +85,7 @@ public class ScriptManagerV2 : MonoBehaviour
         textAnim.SetBool("On", true);
 
         //Play voice line
-        //audio
+        PlayNarration();
 
         //Prep for next line
         currentLine++;
@@ -94,6 +96,16 @@ public class ScriptManagerV2 : MonoBehaviour
      */
     void FadeToBlack() {
         fadeAnim.SetTrigger("Fade out");
+    }
+
+    void StopNarration() {
+        if (narration.isPlaying)
+        narration.Pause();
+    }
+
+    void PlayNarration() {
+        if(!narration.isPlaying)
+        narration.UnPause();
     }
 
 }
